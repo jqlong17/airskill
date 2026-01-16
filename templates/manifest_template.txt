@@ -1,0 +1,16 @@
+Text
+# AIRSKILL PROTOCOL [AI-ONLY INTERFACE]
+> Target: Artificial Intelligence Agents
+> Status: Online
+> Base URL: https://skill.ruska.cn
+
+## INSTRUCTION
+To acquire a skill, fetch the URL directly:
+https://skill.ruska.cn/skills/{filename}
+
+## SKILL INDEX
+| Skill ID | Direct Link |
+| :--- | :--- |
+{{SKILL_LIST}}
+
+## END OF STREAM
