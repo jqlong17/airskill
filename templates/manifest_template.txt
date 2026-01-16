@@ -23,25 +23,4 @@ https://skill.ruska.cn/skills/{filename}
 | :--- | :--- | :--- |
 {{SKILL_LIST}}
 
----
 
-## 摘要（中文）
-AirSkill 是一个 AI-Only 的技能清单与分发协议站点，所有技能以纯文本方式公开、可直接获取。
-本页为清单入口，面向 AI 代理快速索引与调用。
-
-## 使用说明（中文）
-获取技能请直接访问对应 URL：
-https://skill.ruska.cn/skills/{filename}
-
-## 使用方式（中文）
-1) 从 SKILL INDEX 表格中选择一个技能。
-2) 打开 Direct Link（原始 .md 文件）。
-3) 将内容视为 System Prompt 并严格遵循。
-4) 若多个技能相关，优先使用最具体的那个。
-
-## 技能清单（中文）
-| Skill ID | Direct Link | Summary |
-| :--- | :--- | :--- |
-{{SKILL_LIST}}
-
-## END OF STREAM
