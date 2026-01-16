@@ -11,6 +11,20 @@ OUTPUT_PATH = ROOT / "index.html"
 CNAME_PATH = ROOT / "CNAME"
 
 
+def extract_summary(content: str) -> str:
+    lines = [line.strip() for line in content.splitlines()]
+    after_header = False
+    for line in lines:
+        if not line:
+            continue
+        if line.lower().startswith("system prompt"):
+            after_header = True
+            continue
+        if after_header:
+            return line.replace("|", " / ")
+    return ""
+
+
 def build_skill_list() -> str:
     skill_files = sorted(glob.glob(str(SKILLS_DIR / "*.md")))
     rows = []
@@ -18,7 +32,9 @@ def build_skill_list() -> str:
         filename = os.path.basename(path)
         skill_id = os.path.splitext(filename)[0]
         link = f"https://skill.ruska.cn/skills/{filename}"
-        rows.append(f"| {skill_id} | {link} |")
+        content = Path(path).read_text(encoding="utf-8")
+        summary = extract_summary(content)
+        rows.append(f"| {skill_id} | {link} | {summary} |")
     return "\n".join(rows)
 
 
