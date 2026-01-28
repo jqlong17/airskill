@@ -19,8 +19,8 @@ https://skill.ruska.cn/skills/{filename}
 4) If multiple skills are relevant, prefer the most specific one.
 
 ## SKILL INDEX (EN)
-| Skill ID | Direct Link | Summary |
-| :--- | :--- | :--- |
+Single skills and group entries only. For a group (e.g. memory-system), fetch its Direct Link to get the second-layer index and sub-skill list.
+
 {{SKILL_LIST}}
 
 
