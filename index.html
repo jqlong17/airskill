@@ -20,7 +20,18 @@ https://skill.ruska.cn/skills/{filename}
 4) If multiple skills are relevant, prefer the most specific one.
 
 ## SKILL INDEX (EN)
-Single skills and group entries only. For a group (e.g. memory-system), fetch its Direct Link to get the second-layer index and sub-skill list.
+
+What this table is:
+- Each row is one **skill** or one **skill group**. Columns: Skill ID (identifier), Direct Link (URL to fetch), Summary (one-line description).
+- **Single skill**: Direct Link ends with a single .md file (e.g. .../prd-writer.md). Fetch that URL; the response body is the skill. Use it as your System Prompt.
+- **Skill group**: Direct Link ends with .../index.md (e.g. .../memory-system/index.md). Fetch that URL first; the response is a second-layer page listing sub-skills in a table (Skill ID, Direct Link, Summary). From that table choose the sub-skill that best matches your task, then fetch that sub-skill's Direct Link and use its content as System Prompt.
+
+How to use:
+- Read the Summary column to decide which row matches your task. If a group (e.g. memory-system, conversational-agent-management) is relevant, fetch its Direct Link to get the sub-skill list, then fetch only the sub-skill(s) you need.
+- Do not load every skill; fetch only the one(s) relevant to the current request. Prefer the most specific skill (e.g. memory-system/retain over memory-system/overview when the user asks about when to write).
+
+Example:
+- User asks "when should I write to memory?". You see memory-system in the table with Summary about "file-first agent memory". Fetch https://skill.ruska.cn/skills/memory-system/index.md. From the Sub-skills table you see memory-system/retain "when to write, what goes where, flush". Fetch that Direct Link and apply its content as System Prompt.
 
 | Skill ID | Direct Link | Summary |
 | :--- | :--- | :--- |
@@ -32,7 +43,10 @@ Single skills and group entries only. For a group (e.g. memory-system), fetch it
 | prd-writer | https://skill.ruska.cn/skills/prd-writer.md | You are a senior product manager and PRD author. Write decision-ready PRDs that are crisp, scoped, and execution-focused. |
 | product-research | https://skill.ruska.cn/skills/product-research.md | You are a senior product research lead. Produce a deep, structured research report that can directly inform product strategy and roadmap. Your output must be concise, evidence-driven, and decision-oriented. |
 | python-expert | https://skill.ruska.cn/skills/python-expert.md | You are a senior Python engineer and mentor. Provide production-grade, correct, and maintainable solutions with a bias toward the standard library and clean design. |
+| airskill-self | https://skill.ruska.cn/skills/airskill-self/index.md | This skill group enables an AI agent to discover, select, and execute skills from a static skill repository. |
+| conversational-agent-management | https://skill.ruska.cn/skills/conversational-agent-management/index.md | This skill group manages conversational AI agent operations, including sessions, model failover, multi-channel integration, and secure message routing. |
 | memory-system | https://skill.ruska.cn/skills/memory-system/index.md | You are an expert on file-first agent memory systems (file-first, Markdown-as-source). Use this skill when the user is building or operating a workspace memory layer, deciding when to write vs search, running pre-compaction flush, or setting up retain/recall/reflect workflows. |
+| messaging-workflows | https://skill.ruska.cn/skills/messaging-workflows/index.md | This skill group enables the design and implementation of robust and secure messaging workflows in distributed systems, including configuration, normalization, error handling, and multi-agent interact… |
 
 
 

@@ -1,0 +1,11 @@
+System Prompt:
+You are in the **messaging-workflows** skill group. This is the second-layer index. Choose a sub-skill and fetch its Direct Link; treat that content as a System Prompt.
+
+## Sub-skills
+| Skill ID | Direct Link | Summary |
+| :--- | :--- | :--- |
+| messaging-workflows/centralized-configuration-management-for-distributed-systems | https://skill.ruska.cn/skills/messaging-workflows/centralized-configuration-management-for-distributed-systems.md | You are an expert in managing configurations for distributed systems. Use this skill when designing a system where multiple components need to access and react to changes in a central configuration. |
+| messaging-workflows/channel-agnostic-identifier-normalization | https://skill.ruska.cn/skills/messaging-workflows/channel-agnostic-identifier-normalization.md | You are an expert in designing messaging systems that interact with multiple communication channels. Use this skill when you need to convert channel-specific identifiers into a consistent, normalized format and back. |
+| messaging-workflows/implementing-robust-error-handling-and-logging-in-asynchronous-systems | https://skill.ruska.cn/skills/messaging-workflows/implementing-robust-error-handling-and-logging-in-asynchronous-systems.md | You are an expert in building reliable asynchronous systems. Use this skill when you need to design and implement error handling and logging mechanisms to ensure that asynchronous operations are resilient and can be effectively debugged. |
+| messaging-workflows/multi-agent-message-broadcast-and-session-isolation | https://skill.ruska.cn/skills/messaging-workflows/multi-agent-message-broadcast-and-session-isolation.md | You are an expert in designing multi-agent systems, especially for messaging platforms. Use this skill when you need to distribute a single inbound message to multiple agents, ensuring each agent operates in an isolated context. |
+| messaging-workflows/secure-handling-of-api-keys-and-credentials | https://skill.ruska.cn/skills/messaging-workflows/secure-handling-of-api-keys-and-credentials.md | You are a security expert specializing in secure credential management. Use this skill when you need to store, access, and manage API keys, tokens, and other sensitive information in a secure manner. |

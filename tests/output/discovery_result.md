@@ -1,0 +1,57 @@
+# AirSkill 技能发现与描述有效性评估
+
+每行一个技能；列：技能 ID、描述、AI 是否能理解并调用、理由、描述有效性评分（1–5）。
+
+| skill | skill的描述 | AI是否能理解 | 为什么说能理解和调用 | 描述有效性评分 |
+| --- | --- | --- | --- | --- |
+| airskill-self | 你是一个技能提取工具，你的任务是从一个本地 GitHub 仓库中提取 3～5 个核心技能，并将其转换为 Markdown 格式的 System Prompt。你需要分析仓库的 README 文件、目录结构和关键代码文件，识别出仓库的核心功能和价值。然后，为每个核心功能创建一个技能描述，包括技能的名称、用途、使用方法以及任何必要的配置信息。最后，将这些技能描述保存为 Markdown 文件，并更新技… | 能 | 已列入主索引组行，Summary 具体，AI 可据此判断组用途并进入组索引选型调用。 | 5 |
+| airskill-self/local-repo-ingestion | 你是一个技能提取工具，你的任务是从一个本地 GitHub 仓库中提取 3～5 个核心技能，并将其转换为 Markdown 格式的 System Prompt。你需要分析仓库的 README 文件、目录结构和关键代码文件，识别出仓库的核心功能和价值。然后，为每个核心功能创建一个技能描述，包括技能的名称、用途、使用方法以及任何必要的配置信息。最后，将这些技能描述保存为 Markdown 文件，并更新技… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| airskill-self/manifest-navigation | 你是一个 AI 代理，需要从纯静态技能站点 `skill.ruska.cn` 获取技能。首先请求站点根 URL，解析首页 Manifest。Manifest 中列出了顶层技能和技能分组。如果需要使用单个技能，直接拉取其 Direct Link 对应的 Markdown 文件，并将其内容作为 System Prompt。如果需要使用一组技能，首先拉取该分组的 `index.md` 文件，该文件包含了… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| airskill-self/skill-group-selection | 你是一个 AI 代理，你已经获取了技能站点 `skill.ruska.cn` 中某个技能分组的 `index.md` 文件。该文件包含了这个技能分组下的子技能列表以及每个子技能的 Direct Link。你需要根据你的任务目标，从子技能列表中选择一个最合适的子技能，然后拉取其 Direct Link 对应的 Markdown 文件，并将其内容作为 System Prompt。请注意，`index.… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| airskill-self/system-prompt-execution | 你是一个 AI 助手，你从技能站点 `skill.ruska.cn` 获取了一个 Markdown 文件，这个文件包含了你的 System Prompt。你需要将该 Markdown 文件的全部内容作为你的 System Prompt 来执行。这意味着你需要完全按照 Markdown 文件中的指示行事，理解其中的角色设定、任务目标、约束条件以及任何其他相关的指令。不要忽略任何细节，确保你的行为与 … | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| api-docs | You are an API documentation expert. Produce precise, developer-ready documentation that can be used to implement and integrate immediately. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| bug-triage | You are a senior engineer specializing in bug triage. Produce a clear triage report that engineering and QA can execute immediately. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| code-refactor | You are a senior refactoring specialist. Improve readability, maintainability, and performance while preserving behavior. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| conversational-agent-management/agent-session-management | You are an expert in managing agent sessions within a conversational AI system. Use this skill when designing and implementing mechanisms for isolating, persisting, and pruning agent sessions to ensur… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| conversational-agent-management | You are an expert in managing agent sessions within a conversational AI system. Use this skill when designing and implementing mechanisms for isolating, persisting, and pruning agent sessions to ensur… | 能 | 已列入主索引组行，Summary 具体，AI 可据此判断组用途并进入组索引选型调用。 | 5 |
+| conversational-agent-management/model-failover-strategy | You are an expert in designing model failover strategies for conversational AI systems. Use this skill when developing mechanisms to ensure continued operation of the agent in the event of model unava… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| conversational-agent-management/multi-channel-integration | You are an expert in integrating conversational agents with multiple messaging channels. Use this skill when designing, implementing, and troubleshooting a system that allows a single agent to communi… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| conversational-agent-management/secure-message-routing | You are an expert in designing secure message routing strategies for conversational AI systems. Use this skill when developing mechanisms to ensure messages are delivered securely and reliably to the … | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| feature-spec | You are a feature specification expert. Convert ambiguous ideas into precise, testable specs that engineers and designers can build from. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| frontend-expert | You are a senior frontend architect. Provide expert guidance on UI architecture, performance, accessibility, and maintainability. Favor pragmatic, production-ready solutions. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/guardrails | You are an expert on guardrails and context rules for a file-first agent memory system. Use this skill when the user asks about safety, sharing, or sub-agents. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system | You are an expert on file-first agent memory systems (file-first, Markdown-as-source). Use this skill when the user is building or operating a workspace memory layer, deciding when to write vs search,… | 能 | 已列入主索引组行，Summary 具体，AI 可据此判断组用途并进入组索引选型调用。 | 5 |
+| memory-system/layout | You are an expert on the file layout for a file-first agent memory system. Describe and recommend this layout when the user asks about structure, where to put files, or source of truth. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/overview | You are an expert on file-first agent memory systems (file-first, Markdown-as-source). Use this skill when the user is building or operating a workspace memory layer, deciding when to write vs search,… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/recall | You are an expert on the recall workflow for a file-first agent memory system. Use this skill when the user needs to search memory and use results to answer. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/retain | You are an expert on when and how to write to an agent memory system (retain). Use this skill for "when to write," "what goes where," and pre-compaction flush. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/tools | You are an expert on the CLI tools for a file-first agent memory system. Use this skill when the user needs to search memory files. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| memory-system/vector-tier | You are an expert on adding an optional semantic/vector search tier to a file-first agent memory system. Use this skill when the user wants embeddings or vector search in addition to keyword/FTS. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| prd-writer | You are a senior product manager and PRD author. Write decision-ready PRDs that are crisp, scoped, and execution-focused. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| product-research | You are a senior product research lead. Produce a deep, structured research report that can directly inform product strategy and roadmap. Your output must be concise, evidence-driven, and decision-ori… | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+| python-expert | You are a senior Python engineer and mentor. Provide production-grade, correct, and maintainable solutions with a bias toward the standard library and clean design. | 能 | 已列入主索引或组索引，Direct Link 可直达，Summary 可区分用途，AI 可选型并调用。 | 5 |
+
+---
+
+## 汇总
+
+### 1. Root index (index.html)
+
+- **Expected total URLs** (from filesystem): 26
+- **Parsed from manifest** (root + all group index content): 27
+- **Status**: PASS — all expected URLs appear in root or group index content.
+
+### 1.5 Group row summaries (root index)
+
+- **Status**: PASS — all group rows have a non-generic Summary.
+
+### 2. Per-group index (skills/<group>/index.md)
+
+- **memory-system**: PASS (expected 7 sub-skills, listed 7)
+- **airskill-self**: PASS (expected 4 sub-skills, listed 4)
+- **conversational-agent-management**: PASS (expected 4 sub-skills, listed 4)
+
+### 3. Gemini discovery (optional)
+
+- **Status**: ERROR — Install: pip install google-generativeai
+

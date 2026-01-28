@@ -19,7 +19,18 @@ https://skill.ruska.cn/skills/{filename}
 4) If multiple skills are relevant, prefer the most specific one.
 
 ## SKILL INDEX (EN)
-Single skills and group entries only. For a group (e.g. memory-system), fetch its Direct Link to get the second-layer index and sub-skill list.
+
+What this table is:
+- Each row is one **skill** or one **skill group**. Columns: Skill ID (identifier), Direct Link (URL to fetch), Summary (one-line description).
+- **Single skill**: Direct Link ends with a single .md file (e.g. .../prd-writer.md). Fetch that URL; the response body is the skill. Use it as your System Prompt.
+- **Skill group**: Direct Link ends with .../index.md (e.g. .../memory-system/index.md). Fetch that URL first; the response is a second-layer page listing sub-skills in a table (Skill ID, Direct Link, Summary). From that table choose the sub-skill that best matches your task, then fetch that sub-skill's Direct Link and use its content as System Prompt.
+
+How to use:
+- Read the Summary column to decide which row matches your task. If a group (e.g. memory-system, conversational-agent-management) is relevant, fetch its Direct Link to get the sub-skill list, then fetch only the sub-skill(s) you need.
+- Do not load every skill; fetch only the one(s) relevant to the current request. Prefer the most specific skill (e.g. memory-system/retain over memory-system/overview when the user asks about when to write).
+
+Example:
+- User asks "when should I write to memory?". You see memory-system in the table with Summary about "file-first agent memory". Fetch https://skill.ruska.cn/skills/memory-system/index.md. From the Sub-skills table you see memory-system/retain "when to write, what goes where, flush". Fetch that Direct Link and apply its content as System Prompt.
 
 {{SKILL_LIST}}
 
