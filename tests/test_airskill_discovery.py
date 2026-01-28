@@ -18,6 +18,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+# Load .env from project root if present
+_env = ROOT / ".env"
+if _env.is_file():
+    try:
+        from dotenv import load_dotenv
+        load_dotenv(_env)
+    except ImportError:
+        pass
+
 SKILLS_DIR = ROOT / "skills"
 INDEX_HTML = ROOT / "index.html"
 BASE_URL = "https://skill.ruska.cn/skills"
@@ -62,7 +71,7 @@ def run_gemini(api_key: str, index_text: str, group_texts: list[tuple[str, str]]
         sys.exit("Install: pip install google-generativeai")
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.0-flash")
 
     prompt_parts = [
         "You are an AI agent using the AirSkill manifest. Your task: list every Direct Link (URL) that points to an .md file so that you could fetch all skills.",

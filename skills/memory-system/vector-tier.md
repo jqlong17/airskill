@@ -9,6 +9,6 @@ This skill uses keyword/FTS only by default. For semantic search (embeddings + v
 
 Hybrid search: Combine BM25 (keyword) + vector (semantic) for better recall on both exact tokens and paraphrases.
 
-Indexing: Chunk size ~400 tokens, ~80 overlap (consistent with FTS chunking in memory_cli.py). Rebuild index when memory files change.
+Indexing: Chunk size ~400 tokens, ~80 overlap. Rebuild index when memory files change.
 
 For core layout and keyword tools, see memory-system/layout.md and memory-system/tools.md.
